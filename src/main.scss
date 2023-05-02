@@ -1,6 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Prompt:wght@400;600;700&display=swap");
+
+* {
+  font-family: "Prompt", sans-serif;
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
-  font-family: "Prompt", sans-serif;
 }
 
 html,
@@ -12,8 +18,12 @@ body,
 .app {
   height: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-image: url("./assets/images/bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .container {
@@ -21,5 +31,220 @@ body,
   height: 90vh;
   background-color: white;
   border-radius: 20px;
-  margin-top: 40px;
+  margin-top: 20px;
+  padding: 10px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media screen and (max-height: 700px) {
+    margin-top: 10px;
+    height: 80vh;
+  }
+
+  @media screen and (max-height: 375px) {
+    height: 70vh;
+    margin-top: 10px;
+  }
+}
+
+.title {
+  font-size: 37px;
+  color: #383838;
+  font-weight: bold;
+  margin: 0;
+}
+
+.button {
+  font-size: 28px;
+  color: #ffffff;
+  padding: 15px 30px;
+  cursor: pointer;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  background-image: radial-gradient(ellipse farthest-corner at top left, #c41417 0%, #b31315 100%);
+  transition: 0.1s ease-out 0s;
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 5px 10px -5px rgba(0, 0, 0, 0.75);
+  }
+}
+
+.input {
+  height: 60px;
+  color: #4e4e4e;
+  border: 3px solid lightgray;
+  border-radius: 10px;
+  font-size: 34px;
+  text-align: center;
+  outline: none;
+  font-weight: 600;
+}
+
+.text-button {
+  background-color: transparent;
+  border: none;
+  color: #6f6f6f;
+  cursor: pointer;
+  font-size: 28px;
+
+  &:hover {
+    transform: scale(1.05);
+    color: #c41417;
+  }
+}
+
+.button-container {
+  display: flex;
+}
+
+.chat-container {
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  background-color: #eee;
+  height: 100%;
+  width: 100%;
+  padding: 0 10px;
+  overflow-y: scroll;
+}
+
+.chat-input {
+  height: 80px;
+  width: 100%;
+  overflow: hidden;
+  background: linear-gradient(#eee, #fff);
+  position: relative;
+  color: #4e4e4e;
+
+  textarea {
+    color: inherit;
+    border-radius: 10px;
+    border: 3px solid lightgray;
+    font-size: 18px;
+    outline: none;
+    width: 100%;
+    height: 100%;
+    resize: none;
+  }
+
+  span {
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+  }
+}
+
+.chat-item {
+  margin-bottom: 10px;
+
+  .author {
+    margin: 0;
+  }
+
+  .text {
+    display: inline-block;
+    padding: 10px;
+    margin-left: 10px;
+    border-radius: 10px;
+    background-color: #dbdada;
+    word-wrap: break-word;
+  }
+
+  &.text-left {
+    text-align: left;
+  }
+
+  &.text-right {
+    text-align: right;
+  }
+}
+
+.move-in-bottom {
+  animation-name: moveInBottom;
+  animation-duration: 0.8s;
+  animation-timing-function: ease-out;
+}
+
+.move-in-right {
+  animation-name: moveInRight;
+  animation-duration: 0.8s;
+  animation-timing-function: ease-out;
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+$margin-tops: 70;
+$margin-bottoms: 20, 40, 120;
+$margin-y: 40;
+$margin-rights: 50;
+
+@each $mt in $margin-tops {
+  .mt-#{$mt} {
+    margin-top: #{$mt}px;
+  }
+}
+
+@each $mb in $margin-bottoms {
+  .mb-#{$mb} {
+    margin-bottom: #{$mb}px;
+  }
+}
+
+@each $my in $margin-y {
+  .my-#{$my} {
+    margin-top: #{$my}px;
+    margin-bottom: #{$my}px;
+  }
+}
+
+@each $mr in $margin-rights {
+  .mr-#{$mr} {
+    margin-right: #{$mr}px;
+  }
+}
+
+$padding-y: 20;
+$padding-x: 60;
+
+@each $py in $padding-y {
+  .py-#{$py} {
+    padding-top: #{$py}px;
+    padding-bottom: #{$py}px;
+  }
+}
+
+@each $px in $padding-x {
+  .px-#{$px} {
+    padding-left: #{$px}px;
+    padding-right: #{$px}px;
+  }
+}
+
+.align-self-start {
+  align-self: flex-start;
 }
