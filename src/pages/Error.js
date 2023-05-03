@@ -1,9 +1,9 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 
-import Layout from '../components/Layout'
-import Title from '../components/Title'
-import Button from '../components/Button'
+import Layout from '../components/Layout/Layout'
+import Title from '../components/Title/Title'
+import Button from '../components/Button/Button'
 
 const Error = () => {
   const navigate = useNavigate()

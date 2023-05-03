@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 
-import Layout from '../components/Layout'
-import Title from '../components/Title'
-import ChatContainer from '../components/ChatContainer'
-import ChatInput from '../components/ChatInput'
+import Layout from '../components/Layout/Layout'
+import Title from '../components/Title/Title'
+import ChatContainer from '../components/ChatContainer/ChatContainer'
+import ChatInput from '../components/ChatInput/ChatInput'
 
 const ChatRoom = () => {
   const navigate = useNavigate()
@@ -53,7 +53,7 @@ const ChatRoom = () => {
   return (
     <Layout>
       <Title
-        classes="move-in-bottom align-self-start"
+        classes="move-in-bottom align-self-start my-0"
         title={`ห้อง ${roomName}`}
       />
       <ChatContainer chatItem={currentChat} />

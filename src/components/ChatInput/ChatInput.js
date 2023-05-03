@@ -1,11 +1,13 @@
 import React from 'react'
 
+import { BaseChatInput } from './ChatInput.style'
+
 const ChatInput = ({ ...otherProps }) => {
   return (
-    <div className="chat-input">
+    <BaseChatInput className="chat-input">
       <textarea {...otherProps}></textarea>
       <span>Enter เพื่อส่ง</span>
-    </div>
+    </BaseChatInput>
   )
 }
 

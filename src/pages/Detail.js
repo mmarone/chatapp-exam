@@ -2,10 +2,9 @@ import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 
-import Layout from '../components/Layout'
-import Title from '../components/Title'
-import Button from '../components/Button'
-import TextButton from '../components/TextButton'
+import Layout from '../components/Layout/Layout'
+import Title from '../components/Title/Title'
+import Button from '../components/Button/Button'
 
 const Detail = () => {
   const navigate = useNavigate()
@@ -25,9 +24,10 @@ const Detail = () => {
         text="สร้างห้องใหม่"
         onClick={() => navigate('/create-room')}
       />
-      <TextButton
+      <Button
         classes="move-in-bottom"
         text="เข้าร่วมแชท"
+        buttonType="text"
         onClick={() => navigate('/join-room')}
       />
     </Layout>

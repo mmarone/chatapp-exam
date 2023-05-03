@@ -1,14 +1,15 @@
 import React from 'react'
 
-import ChatItem from './ChatItem'
+import ChatItem from '../ChatItem/ChatItem'
+import { BaseChatContainer } from './ChatContainer.style'
 
 const ChatContainer = ({ chatItem }) => {
   return (
-    <div className="chat-container move-in-right">
+    <BaseChatContainer className="move-in-right">
       {chatItem.map((item, i) => (
         <ChatItem key={i} chat={item} />
       ))}
-    </div>
+    </BaseChatContainer>
   )
 }
 

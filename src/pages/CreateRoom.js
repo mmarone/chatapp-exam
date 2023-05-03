@@ -1,11 +1,10 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-import Layout from '../components/Layout'
-import Input from '../components/Input'
-import Title from '../components/Title'
-import Button from '../components/Button'
-import TextButton from '../components/TextButton'
+import Layout from '../components/Layout/Layout'
+import Input from '../components/Input/Input'
+import Title from '../components/Title/Title'
+import Button from '../components/Button/Button'
 
 const CreateRoom = () => {
   const navigate = useNavigate()
@@ -28,9 +27,10 @@ const CreateRoom = () => {
         onChange={(e) => setRoomName(e.target.value)}
       />
       <div className="button-container move-in-bottom">
-        <TextButton
+        <Button
           classes="mr-50"
           text="กลับ"
+          buttonType='text'
           onClick={() => navigate('/detail')}
         />
         <Button text="ยืนยัน" onClick={handleSubmit} />

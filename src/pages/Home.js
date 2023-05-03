@@ -2,10 +2,10 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 
-import Layout from '../components/Layout'
-import Input from '../components/Input'
-import Title from '../components/Title'
-import Button from '../components/Button'
+import Layout from '../components/Layout/Layout'
+import Input from '../components/Input/Input'
+import Title from '../components/Title/Title'
+import Button from '../components/Button/Button'
 
 import { updateName } from '../store/userSlice'
 
